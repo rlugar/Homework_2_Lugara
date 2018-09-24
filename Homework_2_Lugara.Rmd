@@ -1,0 +1,31 @@
+---
+title: "Homework_2"
+author: "Rosamaria Lugara"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Random log distributed values ###
+
+```{r}
+values <- rlnorm (100, meanlog = 1, sdlog = 0.25)
+```
+ 
+### Plot the log distribution in a histogram ###
+
+```{r}
+histogr <-hist (values, main="log values", xlab= "log", col="red")
+```
+
+## Plot on the log scale ##
+
+```{r}
+values <- sort(values, decreasing = F)
+No <- seq(1,100,1)
+plot (values, No, main = "Log Scale", xlab = "values", ylab = "numbers", log ="x")
+```
